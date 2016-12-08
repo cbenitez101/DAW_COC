@@ -1,3 +1,24 @@
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import "menu";
+
 body{
-  background-color: red;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 90px;
+}
+
+#menu {
+  padding: 20px;
+}
+
+.txt-white {
+  color: #ffffff;
+  border: none;
+  &:hover,  &:focus {
+    color: #ffffff;
+    .fa {
+      color: #ffffff;
+      transform: rotate(180deg) rotate(180deg);
+      transition: ease 1s;
+    }
+  }
 }
