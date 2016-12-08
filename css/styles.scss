@@ -30,6 +30,7 @@ $principal05    : #B2AD12;
 .bcolor-p04 {@include bcolor($principal04)}
 .bcolor-p05 {@include bcolor($principal05)}
 .bcolor-p07 {@include bcolor(#333333)}
+.bcolor-p08 {@include bcolor(#f2f2f2)}
 
 .color-fa-p01 {@include color-fa(black, $principal01)}
 .color-fa-p02 {@include color-fa(black, $principal02)}
@@ -112,6 +113,28 @@ body{
   }
 }
 
+.card-food {
+  padding: 10px;
+}
+
+.card-food2 {
+  background-color: white;
+  border: solid #333333 2px;
+  padding: 15px;
+  transition: transform ease-in 0.3s;
+  &:hover {
+    border: solid $principal01 2px;
+    transform: scale(1.05,1.05);
+    h4{
+      color: $principal01;
+    }
+  }
+}
+
+
+.img-food {
+  width: 50%;
+}
 
 #home-ofert {
   background-size: cover;

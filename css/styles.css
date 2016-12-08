@@ -5968,6 +5968,9 @@ button.close {
 .bcolor-p07 {
   background-color: #333333; }
 
+.bcolor-p08 {
+  background-color: #f2f2f2; }
+
 .color-fa-p01 {
   color: black;
   transition: all ease 0.5s; }
@@ -6078,6 +6081,23 @@ body {
   transition: transform ease 0.5s; }
   .card-restaurant2:hover {
     transform: scale(1.5, 1.5); }
+
+.card-food {
+  padding: 10px; }
+
+.card-food2 {
+  background-color: white;
+  border: solid #333333 2px;
+  padding: 15px;
+  transition: transform ease-in 0.3s; }
+  .card-food2:hover {
+    border: solid #097ab2 2px;
+    transform: scale(1.05, 1.05); }
+    .card-food2:hover h4 {
+      color: #097ab2; }
+
+.img-food {
+  width: 50%; }
 
 #home-ofert {
   background-size: cover;
