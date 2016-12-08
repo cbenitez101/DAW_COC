@@ -5808,7 +5808,7 @@ button.close {
     display: none !important; } }
 .navbar-default {
   background-color: #097ab2;
-  border-color: #27b7ff;
+  border: none;
   font-family: 'Candal', sans-serif; }
   .navbar-default .navbar-brand {
     color: #ffffff; }
@@ -5864,9 +5864,170 @@ button.close {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #ff4053;
     background-color: #27b7ff; } }
+@keyframes move {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(-10deg); }
+  50% {
+    transform: rotate(10deg); }
+  75% {
+    transform: rotate(-10deg); }
+  100% {
+    transform: rotate(0deg); } }
+.button-p01 {
+  border: solid #097ab2 2px;
+  background-color: #ffffff;
+  color: #097ab2;
+  border-radius: 0px;
+  transition: all ease-in 0.3s; }
+  .button-p01:hover {
+    background-color: #097ab2;
+    color: #ffffff; }
+
+.button-p02 {
+  border: solid #27b7ff 2px;
+  background-color: #ffffff;
+  color: #27b7ff;
+  border-radius: 0px;
+  transition: all ease-in 0.3s; }
+  .button-p02:hover {
+    background-color: #27b7ff;
+    color: #ffffff; }
+
+.button-p03 {
+  border: solid #ff4053 2px;
+  background-color: #ffffff;
+  color: #ff4053;
+  border-radius: 0px;
+  transition: all ease-in 0.3s; }
+  .button-p03:hover {
+    background-color: #ff4053;
+    color: #ffffff; }
+
+.button-p04 {
+  border: solid #CCC60B 2px;
+  background-color: #ffffff;
+  color: #CCC60B;
+  border-radius: 0px;
+  transition: all ease-in 0.3s; }
+  .button-p04:hover {
+    background-color: #CCC60B;
+    color: #ffffff; }
+
+.button-p05 {
+  border: solid #B2AD12 2px;
+  background-color: #ffffff;
+  color: #B2AD12;
+  border-radius: 0px;
+  transition: all ease-in 0.3s; }
+  .button-p05:hover {
+    background-color: #B2AD12;
+    color: #ffffff; }
+
+.color-p01 {
+  color: #097ab2; }
+
+.color-p02 {
+  color: #27b7ff; }
+
+.color-p03 {
+  color: #ff4053; }
+
+.color-p04 {
+  color: #CCC60B; }
+
+.color-p05 {
+  color: #B2AD12; }
+
+.color-p06 {
+  color: #ffffff; }
+
+.changec-p06 {
+  color: rgba(255, 255, 255, 0.5);
+  transition: transform ease-in 0.3s; }
+  .changec-p06:hover {
+    color: white;
+    transform: scale(1.5, 1.5); }
+
+.bcolor-p01 {
+  background-color: #097ab2; }
+
+.bcolor-p02 {
+  background-color: #27b7ff; }
+
+.bcolor-p03 {
+  background-color: #ff4053; }
+
+.bcolor-p04 {
+  background-color: #CCC60B; }
+
+.bcolor-p05 {
+  background-color: #B2AD12; }
+
+.bcolor-p07 {
+  background-color: #333333; }
+
+.color-fa-p01 {
+  color: black;
+  transition: all ease 0.5s; }
+  .color-fa-p01:hover .fa {
+    color: #097ab2;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; }
+
+.color-fa-p02 {
+  color: black;
+  transition: all ease 0.5s; }
+  .color-fa-p02:hover .fa {
+    color: #27b7ff;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; }
+
+.color-fa-p03 {
+  color: white;
+  transition: all ease 0.5s; }
+  .color-fa-p03:hover .fa {
+    color: #ff4053;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; }
+
+.color-fa-p03b {
+  color: black;
+  transition: all ease 0.5s; }
+  .color-fa-p03b:hover .fa {
+    color: #ff4053;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; }
+
+.color-fa-p04 {
+  color: black;
+  transition: all ease 0.5s; }
+  .color-fa-p04:hover .fa {
+    color: #CCC60B;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; }
+
+.color-fa-p05 {
+  color: black;
+  transition: all ease 0.5s; }
+  .color-fa-p05:hover .fa {
+    color: #B2AD12;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; }
+
 body {
   font-family: 'Raleway', sans-serif;
-  margin-top: 90px; }
+  margin-top: 89px; }
+
+.titles {
+  font-family: 'Candal', sans-serif; }
 
 #menu {
   padding: 20px; }
@@ -5880,5 +6041,48 @@ body {
       color: #ffffff;
       transform: rotate(180deg) rotate(180deg);
       transition: ease 1s; }
+
+.p-100 {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+
+.p-25 {
+  padding-top: 25px;
+  padding-bottom: 25px; }
+
+.p-10 {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.mt-25 {
+  margin-top: 25px; }
+
+.mt-50 {
+  margin-top: 50px; }
+
+.m-50 {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
+#home-restaurant {
+  background: fixed url("../img/restaurante1.jpg");
+  background-size: cover; }
+
+#card-restaurant {
+  background-color: white;
+  padding: 20px; }
+
+#home-ofert {
+  background-size: cover;
+  background: fixed url("../img/oferta1.jpg"); }
+
+.img-carousel {
+  width: 100%; }
+
+@media (min-width: 1280px) {
+  .img-carousel {
+    width: 50%;
+    margin-top: 10px;
+    border-radius: 5px; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,7 +6,7 @@ $dropDown       : true;
 
 .navbar-default {
   background-color: $bgDefault;
-  border-color: $bgHighlight;
+  border: none;
   font-family: 'Candal', sans-serif;
   .navbar-brand {
     color: $colDefault;

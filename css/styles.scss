@@ -1,9 +1,51 @@
 @import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 @import "menu";
+@import "mixins";
+
+
+$principal01    : #097ab2;
+$principal02    : #27b7ff;
+$principal03    : #ff4053;
+$principal04    : #CCC60B;
+$principal05    : #B2AD12;
+
+.button-p01 {@include button($principal01);}
+.button-p02 {@include button($principal02);}
+.button-p03 {@include button($principal03);}
+.button-p04 {@include button($principal04);}
+.button-p05 {@include button($principal05);}
+
+.color-p01 {@include color($principal01)}
+.color-p02 {@include color($principal02)}
+.color-p03 {@include color($principal03)}
+.color-p04 {@include color($principal04)}
+.color-p05 {@include color($principal05)}
+.color-p06 {@include color(#ffffff)}
+
+.changec-p06 {@include change-opacity(#ffffff)}
+
+.bcolor-p01 {@include bcolor($principal01)}
+.bcolor-p02 {@include bcolor($principal02)}
+.bcolor-p03 {@include bcolor($principal03)}
+.bcolor-p04 {@include bcolor($principal04)}
+.bcolor-p05 {@include bcolor($principal05)}
+.bcolor-p07 {@include bcolor(#333333)}
+
+.color-fa-p01 {@include color-fa(black, $principal01)}
+.color-fa-p02 {@include color-fa(black, $principal02)}
+.color-fa-p03 {@include color-fa(white, $principal03)}
+.color-fa-p03b {@include color-fa(black, $principal03)}
+.color-fa-p04 {@include color-fa(black, $principal04)}
+.color-fa-p05 {@include color-fa(black, $principal05)}
+
 
 body{
   font-family: 'Raleway', sans-serif;
-  margin-top: 90px;
+  margin-top: 89px;
+}
+
+.titles {
+  font-family: 'Candal', sans-serif;
 }
 
 #menu {
@@ -20,5 +62,61 @@ body{
       transform: rotate(180deg) rotate(180deg);
       transition: ease 1s;
     }
+  }
+}
+
+.p-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.p-25 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.p-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.m-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#home-restaurant {
+  background: fixed url('../img/restaurante1.jpg');
+  background-size: cover;
+}
+
+#card-restaurant {
+  background-color: white;
+  padding: 20px;
+}
+
+
+#home-ofert {
+  background-size: cover;
+  background: fixed url('../img/oferta1.jpg');
+}
+
+.img-carousel {
+  width: 100%;
+}
+
+@media (min-width:1280px) {
+  .img-carousel {
+    width: 50%;
+    margin-top: 10px;
+    border-radius: 5px;
   }
 }

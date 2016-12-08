@@ -1,0 +1,49 @@
+@mixin button($color) {
+    border: solid $color 2px;
+    background-color: #ffffff;
+    color: $color;
+    border-radius: 0px;
+    transition: all ease-in 0.3s;
+    &:hover{
+      background-color: $color;
+      color:  #ffffff;
+    }
+}
+
+@mixin color($color) {
+  color: $color;
+}
+
+@mixin bcolor($color) {
+  background-color: $color;
+}
+
+@keyframes move {
+  0%   {transform: rotate(0deg);}
+  25%  {transform: rotate(-10deg);}
+  50%  {transform: rotate(10deg);}
+  75%  {transform: rotate(-10deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@mixin color-fa($color1,$color2){
+  color:  $color1;
+  transition: all ease 0.5s;
+  &:hover {
+    .fa{
+      color: $color2;
+      animation-name: move;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+@mixin change-opacity($color){
+  color:  rgba($color, 0.5);
+  transition: transform ease-in 0.3s;
+  &:hover {
+    color:  rgba($color, 1);
+    transform: scale(1.5,1.5);
+  }
+}
