@@ -98,9 +98,18 @@ body{
   background-size: cover;
 }
 
-#card-restaurant {
+.card-restaurant {
   background-color: white;
   padding: 20px;
+}
+
+.card-restaurant2 {
+  background-color: white;
+  padding: 20px;
+  transition: transform ease 0.5s;
+  &:hover {
+    transform: scale(1.5,1.5);
+  }
 }
 
 
@@ -109,8 +118,22 @@ body{
   background: fixed url('../img/oferta1.jpg');
 }
 
+#restaurante {
+  background-size: cover;
+  background: fixed url('../img/restaurante2.jpg');
+}
+
+#foot {
+  margin-bottom: 0px;
+}
+
 .img-carousel {
   width: 100%;
+}
+
+.sinnda {
+  background-color: white;
+  border: none;
 }
 
 @media (min-width:1280px) {

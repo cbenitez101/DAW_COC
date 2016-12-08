@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="carta.html" class="text-uppercase"><i class="fa fa-cutlery fa-fw"></i> carta</a></li>
-                <li><a href="restaurante.html" class="text-uppercase"><i class="fa fa-map-marker fa-fw"></i> restaurante</a></li>
+                <li><a href="restaurante.html" class="text-uppercase color-p03"><i class="fa fa-map-marker fa-fw"></i> restaurante</a></li>
                 <li><a href="reserva.html" class="text-uppercase"><i class="fa fa-calendar fa-fw"></i> reserva</a></li>
                 <li><a href="pedido.html" class="text-uppercase"><i class="fa fa-motorcycle fa-fw"></i> pedido</a></li>
                 <li><a href="franquicia.html" class="text-uppercase"><i class="fa fa-star fa-fw"></i> franquicia</a></li>
@@ -32,56 +32,48 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner text-center" role="listbox">
-        <div class="item active">
-            <p><img src="img/carousel1.jpg" class="img-carousel alt="..."></p>
-            <div class="carousel-caption">
-                <h3 class="titles color-p01">Nueva hamburguesa tropical</h3>
-                <a href="" class="btn button-p01 titles btn-sm titles text-uppercase">Quiero probarla</a>
+<section class="p-100" id="restaurante">
+    <h2 class="titles text-center color-p01 p-25">Vamos a ayudarte a encontrar tu restaurante</h2>
+    <form action="">
+        <div class="row container">
+            <div class="col-xs-12 col-md-4">
+                <h4 class="titles color-p01">Provincia</h4>
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <h4 class="titles color-p01">Localidad</h4>
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <h4 class="titles color-p01">Restaurantes</h4>
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
         </div>
-        <div class="item">
-            <p><img src="img/carousel2.jpg" class="img-carousel alt="..."></p>
-            <div class="carousel-caption">
-                <h3 class="titles color-p01">Nueva sección del café</h3>
-                <a href="restaurante.html" class="btn button-p01 titles btn-sm titles text-uppercase">Quiero un café</a>
-            </div>
-        </div>
-        <div class="item">
-            <p><img src="img/carousel3.jpg" class="img-carousel alt="..."></p>
-            <div class="carousel-caption">
-                <h3 class="titles color-p01">Nuestro cono más famaso</h3>
-                <a href="restaurante.html" class="btn button-p01 titles btn-sm titles text-uppercase">Quiero uno</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<section>
-    <div class="container text-center p-100 color-fa-p01">
-        <i class="fa fa-info fa-5x"></i>
-        <h2 class="titles">100% Canarios</h2>
-        <p>Aunque trabajamos la fusión Canaria y Americana, todos los elementos de nuestra carta están elaborados
-            con productos 100% canarios  que nos proveen nuestros agricultores y ganaderos de las islas.</p>
-        <a href="" class="btn button-p01 titles btn-lg titles text-uppercase mt-25">Más informacion</a>
-    </div>
+    </form>
 </section>
 
-<section class="p-100 text-center" id="home-ofert">
-    <div class="container color-fa-p03 color-p06">
-        <i class="fa fa-heart fa-5x"></i>
-        <h2 class="titles">Crea tu propia hamburguesa</h2>
-        <p>Nosotros te damos los ingredientes y tú eliges que ponerle a tu hamburguesa</p>
-        <a href="" class="btn button-p03 titles btn-lg titles text-uppercase mt-25">Crear ya</a>
+<section>
+    <div class="container text-center p-100">
+        <h2 class="titles color-p01">Tu restaurante</h2>
+        <p>Has seleccionado este restaurante</p>
     </div>
 </section>
 
@@ -104,14 +96,42 @@
     </div>
 </section>
 
-<section class="p-100 text-center" id="home-restaurant">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-offset-4 col-md-4 col-xs-12 color-fa-p03b card-restaurant">
-                <i class="fa fa-map-marker fa-5x"></i>
-                <h2 class="titles">Restaurantes</h2>
-                <p>Encuentra ya tu restaurante más cercano</p>
-                <a href="restaurante.html" class="btn button-p03 titles btn-lg titles text-uppercase mt-25">Buscar</a>
+<section id="home-restaurant">
+    <div class="container text-center p-100">
+        <div class="row p-25">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Cerca</h4>
+                <p>Siempre tendrás un restaurante cerca de ti</p>
+            </div>
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Económico</h4>
+                <p>Nuestro precios son muy competitivos</p>
+            </div>
+        </div>
+        <div class="row p-25">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Calidad</h4>
+                <p>Nuestros productos son de gran calidad</p>
+            </div>
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Servicio</h4>
+                <p>Estamos siempre atentos para atenderte</p>
+            </div>
+        </div>
+        <div class="row p-25">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Comodidad</h4>
+                <p>Disfruta de nuestras sillas y sillones</p>
+            </div>
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Rapidez</h4>
+                <p>Siempre te atenderemos en muy poco tiempo</p>
             </div>
         </div>
     </div>
