@@ -21,10 +21,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="carta.html" class="text-uppercase"><i class="fa fa-cutlery fa-fw"></i> carta</a></li>
+                <li><a href="carta.php" class="text-uppercase"><i class="fa fa-cutlery fa-fw"></i> carta</a></li>
                 <li><a href="restaurante.html" class="text-uppercase color-p03"><i class="fa fa-map-marker fa-fw"></i> restaurante</a></li>
                 <li><a href="reserva.html" class="text-uppercase"><i class="fa fa-calendar fa-fw"></i> reserva</a></li>
-                <li><a href="carta.html" class="text-uppercase"><i class="fa fa-motorcycle fa-fw"></i> pedido</a></li>
+                <li><a href="carta.php" class="text-uppercase"><i class="fa fa-motorcycle fa-fw"></i> pedido</a></li>
                 <li><a href="franquicia.html" class="text-uppercase"><i class="fa fa-star fa-fw"></i> franquicia</a></li>
                 <li><a href="acceder.html" class="text-uppercase"><i class="fa fa-user fa-fw"></i> acceder</a></li>
             </ul>
@@ -40,28 +40,25 @@
                 <form>
                     <div class="form-group">
                         <label for="">Provincia</label>
-                        <select class="form-control">
-                            <option>Las Palmas</option>
-                            <option>Santa Cruz de Tenerife</option>
+                        <select class="form-control" id="provincia">
+                            <option>Selecciona una provincia</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="">Localidad</label>
-                        <select class="form-control">
-                            <option>Telde</option>
-                            <option>Vecindario</option>
+                        <select class="form-control" id="localidad">
+                            <option>Selecciona una localidad</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="">Restaurantes</label>
-                        <select class="form-control">
-                            <option>CC Siete Palmas</option>
-                            <option>CC Las Arenas</option>
+                        <select class="form-control" id="restnombre">
+                            <option>Selecciona un restaurante</option>
                         </select>
                     </div>
-                    <a href="" class="btn button-p01 btn-lg text-uppercase">encontrar</a>
+                    <div class="btn button-p01 btn-lg text-uppercase" id="encontrar">encontrar</div>
                 </form>
             </div>
         </div>
@@ -72,6 +69,7 @@
     <div class="container text-center p-100">
         <h2 class="titles color-p01">Tu restaurante</h2>
         <p>Has seleccionado este restaurante</p>
+        <div id="datosrest"></div>
     </div>
 </section>
 
@@ -155,5 +153,6 @@
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/restaurante.js"></script>
 </body>
 </html>

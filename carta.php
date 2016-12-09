@@ -1,13 +1,12 @@
+<?php include 'functions.php'?>
 <html>
 <head>
     <title>COC</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="node_modules/font-awesome/scss/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Candal|Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="node_modules/jqueryui/jquery-ui.css">
 </head>
 <body>
-
 <nav class="navbar navbar-default navbar-fixed-top" id="menu">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -33,65 +32,54 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<section class="p-100 text-center">
-    <i class="fa fa-map-marker fa-5x color-p05"></i>
-    <h2 class="titles text-center color-p05 p-25">Primero busquemos un restaurante ...</h2>
+<section class="p-100">
     <div class="container text-center">
-        <div class="row reserva">
-            <div class="col-md-offset-4 col-md-4">
-                <form>
-                    <div class="form-group">
-                        <label for="">Provincia</label>
-                        <select class="form-control" id="provincia">
-                            <option>Selecciona una provincia</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Localidad</label>
-                        <select class="form-control" id="localidad">
-                            <option>Selecciona una localidad</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Restaurantes</label>
-                        <select class="form-control" id="restnombre">
-                            <option>Selecciona un restaurante</option>
-                        </select>
-                    </div>
-                    <div class="btn button-p05 btn-lg text-uppercase" id="encontrar">encontrar</div>
-                </form>
-            </div>
+        <h2 class="titles text-center color-p01">Nuestra carta</h2>
+        <div class="btn btn-sm button-p01 text-uppercase tipos">Entrantes</div>
+        <div class="btn btn-sm button-p01 text-uppercase tipos">Primeros</div>
+        <div class="btn btn-sm button-p01 text-uppercase tipos">Segundos</div>
+        <div class="btn btn-sm button-p01 text-uppercase tipos">Postres</div>
+        <div class="p-25">
+            <h4 class="titles text-center color-p03">Alérgenos</h4>
+            <div class="btn btn-xs button-p03 text-uppercase alerg">Gluten</div>
+            <div class="btn btn-xs button-p03 text-uppercase alerg">Carne</div>
+            <div class="btn btn-xs button-p03 text-uppercase alerg">Pescado</div>
+            <div class="btn btn-xs button-p03 text-uppercase alerg">Frutos secos</div>
         </div>
     </div>
-    <div id="datosrest"></div>
 </section>
 
-<section class="p-100 text-center">
-    <i class="fa fa-clock-o fa-5x color-p04"></i>
-    <h2 class="titles text-center color-p04 p-25">... ahora vamos con la reserva</h2>
+<section class="p-100 bcolor-p08">
     <div class="container text-center">
-        <div class="row reserva">
-            <div class="col-md-offset-4 col-md-4">
-                <div id="errorreserva"><h2>No pueden haber campos vacios en la reserva</h2></div>
-                <form>
-                    <div class="form-group">
-                        <label for="">Comensales</label>
-                        <input type="number" class="form-control" id="formcomensales" name="formrcomensales">
+        <div class="row">
+            <div class="col-md-8">
+                <? $i=0; ?>
+                <? foreach(get_dishes() as $key => $value): ?>
+                    <? if($i==0): ?>
+                        <div class="row">
+                    <? endif; ?>
+                    <? $i++; ?>
+                    <div class="col-md-4 card-food <? echo get_alergen_class($value['alergenos']); echo $value['tipo']; ?>">
+                        <div class="card-food2">
+                            <p><img src="<? echo $value['foto']; ?>" class="img-food" alt=""></p>
+                            <h4 class="titles"><? echo $value['nombre']; ?></h4>
+                            <p><? echo $value['descripcion']; ?></p>
+                            <h5 class="titles color-p03"><? echo $value['precio']; ?>€</h5>
+                            <a href="" class="btn btn-xs button-p05">Añadir</a>
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="">Fecha</label>
-                        <input type="text" class="form-control" id="formdate" name="formdate">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Hora</label>
-                        <input type="time" class="form-control" size="3" id="formhora" name="formhora"><br/>
-                    </div>
-                    <div href="" class="btn button-p04 btn-lg text-uppercase" id="botonreserva">encontrar</div>
-                </form>
+                    <? if($i==3): ?>
+                        </div>
+                        <? $i=0; ?>
+                    <? endif; ?>
+                <? endforeach; ?>
+            </div>
+            <div class="col-md-4">
+                <h2 class="titles text-center color-p05">Tu pedido</h2>
+                <p>Pollo en salsa</p>
+                <p>Ensalada césar</p>
+                <h4 class="titles text-center color-p03">Total: 20€</h4>
+                <a href="" class="btn btn-md button-p05 titles">Realizar pedido</a>
             </div>
         </div>
     </div>
@@ -117,8 +105,6 @@
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
-<script src="js/restaurante.js"></script>
-<script type="text/javascript" src="node_modules/jqueryui/jquery-ui.js"></script>
-
+<script src="js/carta.js"></script>
 </body>
 </html>
