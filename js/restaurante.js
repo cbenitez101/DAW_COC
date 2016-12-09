@@ -61,7 +61,8 @@ $(document).ready(function(){
         var restnombre=restaurantes[$('#restnombre option:selected').html()];
         $('#datosrest').append('Nombre: '+$('#restnombre option:selected').html()+'<br/>');
         $('#datosrest').append('Telefono: '+restnombre['telefono']+'<br/>');
-        $('#datosrest').append('Dirección: '+restnombre['direccion']);
+        $('#datosrest').append('Direccion: '+restnombre['direccion']+'<br/>');
+        $('#datosrest').append('Codigo Postal: '+restnombre['CP']+'<br/>');
     });
 
     $('#botonreserva').on('click', function(e){
@@ -86,6 +87,7 @@ $(document).ready(function(){
                 data: datos
             }).done(function(){
                 vacio=false;
+                console.log(datos);
             });
         }else{
             $('#errorreserva').fadeIn();
