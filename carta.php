@@ -65,7 +65,7 @@
                             <h4 class="titles"><? echo $value['nombre']; ?></h4>
                             <p><? echo $value['descripcion']; ?></p>
                             <h5 class="titles color-p03"><? echo $value['precio']; ?>€</h5>
-                            <a href="" class="btn btn-xs button-p05">Añadir</a>
+                            <div  class="btn btn-xs button-p05 anadirpedido">Añadir</div>
                         </div>
                     </div>
                     <? if($i==3): ?>
@@ -74,10 +74,9 @@
                     <? endif; ?>
                 <? endforeach; ?>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 pedido">
                 <h2 class="titles text-center color-p05">Tu pedido</h2>
-                <p>Pollo en salsa</p>
-                <p>Ensalada césar</p>
+                <div class="containerpedido"></div>
                 <h4 class="titles text-center color-p03">Total: 20€</h4>
                 <a href="" class="btn btn-md button-p05 titles">Realizar pedido</a>
             </div>

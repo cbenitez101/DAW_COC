@@ -10,5 +10,13 @@ $(document).ready(function(){
         $('.hasalerg_'+$(this).html()).hide();
     });
 
+    $('.anadirpedido').on('click', function(){
+        $('.containerpedido').append('<p>'+$(this).parent().find('.titles').html()+' Cantidad: <input type="number" class="cant">&nbsp;<a><i class="fa fa-times quitar"></i></a></p>');
+    });
+
+    $('.containerpedido .fa-times').on('click', function(){
+        console.log($(this));
+       // $(this).parent().remove();
+    });
 
 });
