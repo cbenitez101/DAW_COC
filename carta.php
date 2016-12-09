@@ -77,7 +77,7 @@
             <div class="col-md-4 pedido">
                 <h2 class="titles text-center color-p05">Tu pedido</h2>
                 <div class="containerpedido"></div>
-                <h4 class="titles text-center color-p03">Total: 20€</h4>
+                <h4 class="titles text-center color-p03">Total: </h4>
                 <a href="" class="btn btn-md button-p05 titles">Realizar pedido</a>
             </div>
         </div>
