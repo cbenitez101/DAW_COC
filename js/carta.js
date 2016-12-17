@@ -11,7 +11,7 @@ $(document).ready(function(){
     });
 
     $('.anadirpedido').on('click', function(){
-        $('.containerpedido').append('<p><a><i class="fa fa-times quitar"></i></a>&nbsp;'+$(this).parent().find('.titles').html()+' Cantidad: <input type="number" class="cant"></p>');
+        $('.containerpedido').append('<p><a><i class="fa fa-times quitar"></i></a>&nbsp;'+$(this).parent().find('.titles').html()+' - Cantidad: <input type="number" class="cant"></p>');
     });
 
     $('.containerpedido .fa-times').on('click', function(){

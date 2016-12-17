@@ -1,15 +1,18 @@
 var restaurantes={
     "COC - Maspalomas":{"localidad":'Maspalomas', "provincia": "Las-Palmas", "coord":[-15.586641, 27.768517], "CP":35100, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
-    "COC - El tablero":{"localidad":'Maspalomas', "provincia": "Las-Palmas", "coord":[-15.586641, 27.768517], "CP":35100, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
-    "COC - Tafira":{"localidad":'Tafira-Baja', "provincia": "Las-Palmas", "coord":[-15.451307, 28.072883], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
-    "COC - Galdar":{"localidad":'Galdar', "provincia": "Las-Palmas", "coord":[], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
-    "COC - Telde":{"localidad":'Telde', "provincia": "Las-Palmas", "coord":[], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
-    "COC - LaLaguna":{"localidad":'La-Laguna', "provincia": "Santa-Cruz-de-Tenerife", "coord":[], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
-    "COC - StaCruz":{"localidad":'Santa-Cruz', "provincia": "Santa-Cruz-de-Tenerife", "coord":[], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777}
+    "COC - El tablero":{"localidad":'Maspalomas', "provincia": "Las-Palmas", "coord":[-15.605770, 27.770492,], "CP":35100, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
+    "COC - Tafira":{"localidad":'Tafira-Baja', "provincia": "Las-Palmas", "coord":[-15.451923, 28.073182], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
+    "COC - Galdar":{"localidad":'Galdar', "provincia": "Las-Palmas", "coord":[-15.652444, 28.145664], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
+    "COC - Telde":{"localidad":'Telde', "provincia": "Las-Palmas", "coord":[-15.417853, 27.995795], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
+    "COC - LaLaguna":{"localidad":'La-Laguna', "provincia": "Santa-Cruz-de-Tenerife", "coord":[-16.316859, 28.486504], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777},
+    "COC - StaCruz":{"localidad":'Santa-Cruz', "provincia": "Santa-Cruz-de-Tenerife", "coord":[-16.258876, 28.458672], "CP":00000, "direccion": 'Avda. Pepe Monagas nº44', "telefono": 928777777}
 }
 $(document).ready(function(){
-
+    $('#map').hide();
+    $('#prest').hide();
     $('#errorreserva').hide();
+    $('#alertaseleccionrest').hide();
+
     if ($('#formdate').length > 0){
         $.datepicker.regional['es'] = {
             closeText: 'Cerrar',
@@ -39,8 +42,8 @@ $(document).ready(function(){
 
     $(restaurantes).each(function(index, value){
         $.each(value, function(index2, value2){
-            if ($('.'+value2.provincia).length == 0) $('#provincia').append('<option class="'+value2.provincia+'">'+value2.provincia.replace('-', ' ')+'</option>');
-            if ($('.'+value2.localidad).length == 0) $('#localidad').append('<option class="'+value2.provincia+' '+ value2.localidad+'">'+value2.localidad.replace('-', ' ')+'</option>');
+            if ($('.'+value2.provincia).length == 0) $('#provincia').append('<option class="'+value2.provincia+'">'+value2.provincia.replace(/-/g , " ")+'</option>');
+            if ($('.'+value2.localidad).length == 0) $('#localidad').append('<option class="'+value2.provincia+' '+ value2.localidad+'">'+value2.localidad.replace(/-/g , " ")+'</option>');
             $('#restnombre').append('<option class="'+value2.provincia + ' ' + value2.localidad+'">'+index2+'</option>');
         });
     });
@@ -58,11 +61,44 @@ $(document).ready(function(){
     });
 
     $('#encontrar').on('click', function(){
-        var restnombre=restaurantes[$('#restnombre option:selected').html()];
-        $('#datosrest').append('Nombre: '+$('#restnombre option:selected').html()+'<br/>');
-        $('#datosrest').append('Telefono: '+restnombre['telefono']+'<br/>');
-        $('#datosrest').append('Direccion: '+restnombre['direccion']+'<br/>');
-        $('#datosrest').append('Codigo Postal: '+restnombre['CP']+'<br/>');
+        $('#alertaseleccionrest').empty();
+        $('#alertaseleccionrest').hide();
+        if ($('#restnombre option:selected').length > 0 && $('#restnombre option:selected').val() !== "Selecciona un restaurante"){
+            var restnombre=restaurantes[$('#restnombre option:selected').html()];
+            var GEOjson={ "type": "FeatureCollection",
+                "features": [
+                    { "type": "Feature",
+                        "geometry": {"type": "Point", "coordinates": restnombre["coord"]}, // Formato: [x,y] ó [longitud, latitud]
+                        "properties": {"prop0": "value0"}
+                    }
+                ]
+            };
+            var myLatLng = {lat: restnombre["coord"][1], lng: restnombre["coord"][0]};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                zoomControl: true,
+                mapTypeControl: true,
+                scaleControl: true,
+                streetViewControl: true,
+                rotateControl: true,
+                scrollwheel:false,
+                center: myLatLng
+            });
+            map.data.addGeoJson(GEOjson);
+
+            $('#map').fadeIn();
+            $('#prest').fadeIn();
+
+            $('#datosrest').empty();
+            $('#datosrest').append('<br/><b>Nombre:</b> '+$('#restnombre option:selected').html()+'<br/>');
+            $('#datosrest').append('<b>Telefono:</b> '+restnombre['telefono']+'<br/>');
+            $('#datosrest').append('<b>Direccion:</b> '+restnombre['direccion']+'<br/>');
+            $('#datosrest').append('<b>Codigo Postal:</b> '+restnombre['CP']+'<br/>');
+        }else{
+            $('#alertaseleccionrest').text('Has de seleccionar al menos un restaurante');
+            $('#alertaseleccionrest').fadeIn();
+        }
+
     });
 
     $('#botonreserva').on('click', function(e){
@@ -80,7 +116,7 @@ $(document).ready(function(){
         });
         var datos={};
         if (!vacio){
-            datos={provincia: datas[0], localidad:datas[1], restaurante: datas[2], comensales: datas[3], fecha: datas[4], hora:datas[5]};
+            datos={provincia: ((datas[0] !== 'Selecciona una provincia')?datas[0]:''), localidad:((datas[1] !== 'Selecciona una localidad')?datas[0]:''), restaurante: datas[2], comensales: datas[3], fecha: datas[4], hora:datas[5]};
             $.ajax({
                 url: 'reserva.php',
                 type: 'GET',
@@ -94,3 +130,4 @@ $(document).ready(function(){
         }
     });
 });
+

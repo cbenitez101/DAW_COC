@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="node_modules/font-awesome/scss/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Candal|Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="node_modules/jqueryui/jquery-ui.css">
+    <link rel="stylesheet" href="node_modules/jquery-ui/jquery-ui.css">
 </head>
 <body>
 
@@ -40,6 +40,7 @@
         <div class="row reserva">
             <div class="col-md-offset-4 col-md-4">
                 <form>
+                    <div class="color-p03" id="alertaseleccionrest"></div><br/>
                     <div class="form-group">
                         <label for="">Provincia</label>
                         <select class="form-control" id="provincia">
@@ -65,6 +66,10 @@
             </div>
         </div>
     </div>
+    <div id="map"></div>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj0E4XyNuVPYsP88Cx5EtXd7pTlTnm90o">
+    </script>
     <div id="datosrest"></div>
 </section>
 
@@ -119,6 +124,6 @@
 <script src="js/bootstrap.js"></script>
 <script src="js/restaurante.js"></script>
 <script type="text/javascript" src="node_modules/jqueryui/jquery-ui.js"></script>
-
+<script type="text/javascript" src="node_modules/googlemaps/jquery.googlemap.js"></script>
 </body>
 </html>
