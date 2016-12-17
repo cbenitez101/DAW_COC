@@ -6094,6 +6094,7 @@ body {
   background-color: white;
   border: solid #333333 2px;
   padding: 15px;
+  height: 225px !important;
   transition: transform ease-in 0.3s; }
   .card-food2:hover {
     border: solid #097ab2 2px;
@@ -6133,5 +6134,8 @@ body {
     border-radius: 5px; } }
 .cant {
   width: 35px; }
+
+.selected {
+  border: solid #ffffff 2px; }
 
 /*# sourceMappingURL=styles.css.map */

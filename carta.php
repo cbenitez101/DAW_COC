@@ -39,12 +39,14 @@
         <div class="btn btn-sm button-p01 text-uppercase tipos">Primeros</div>
         <div class="btn btn-sm button-p01 text-uppercase tipos">Segundos</div>
         <div class="btn btn-sm button-p01 text-uppercase tipos">Postres</div>
+        <div class="btn btn-sm button-p01 text-uppercase tipos tiposbg">Todos</div>
         <div class="p-25">
             <h4 class="titles text-center color-p03">Alérgenos</h4>
             <div class="btn btn-xs button-p03 text-uppercase alerg">Gluten</div>
             <div class="btn btn-xs button-p03 text-uppercase alerg">Carne</div>
             <div class="btn btn-xs button-p03 text-uppercase alerg">Pescado</div>
             <div class="btn btn-xs button-p03 text-uppercase alerg">Frutos secos</div>
+            <div class="btn btn-xs button-p03 text-uppercase alerg alergbg">Limpiar</div>
         </div>
     </div>
 </section>
@@ -64,7 +66,7 @@
                             <p><img src="<? echo $value['foto']; ?>" class="img-food" alt=""></p>
                             <h4 class="titles"><? echo $value['nombre']; ?></h4>
                             <p><? echo $value['descripcion']; ?></p>
-                            <h5 class="titles color-p03"><? echo $value['precio']; ?>€</h5>
+                            <h5 class="titles prize color-p03"><? echo $value['precio']; ?>€</h5>
                             <div  class="btn btn-xs button-p05 anadirpedido">Añadir</div>
                         </div>
                     </div>
@@ -77,7 +79,7 @@
             <div class="col-md-4 pedido">
                 <h2 class="titles text-center color-p05">Tu pedido</h2>
                 <div class="containerpedido"></div>
-                <h4 class="titles text-center color-p03">Total: </h4>
+                <h4 class="titles text-center color-p03 containerprize">Total: 0€</h4>
                 <a href="" class="btn btn-md button-p05 titles">Realizar pedido</a>
             </div>
         </div>
