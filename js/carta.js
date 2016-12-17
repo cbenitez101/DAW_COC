@@ -39,7 +39,7 @@ function getPrize(){
     var prize=0;
     if($('.cant').length > 0){
         $('.cant').each(function(){
-            prize+=(parseFloat($(this).val())*$(this).data('prize'))
+            prize+=(((parseFloat($(this).val()) < 0)? 0 : parseFloat($(this).val())) * $(this).data('prize'));
         });
     }
     $('.containerprize').text('Total: '+prize+'€');
