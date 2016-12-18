@@ -5864,11 +5864,6 @@ button.close {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #ff4053;
     background-color: #27b7ff; } }
-#map {
-  height: 50%;
-  width: 100%;
-  z-index: 1; }
-
 @keyframes move {
   0% {
     transform: rotate(0deg); }
@@ -6137,5 +6132,10 @@ body {
 
 .selected {
   border: solid #ffffff 2px; }
+
+#map {
+  height: 80%;
+  width: 100%;
+  z-index: 1; }
 
 /*# sourceMappingURL=styles.css.map */

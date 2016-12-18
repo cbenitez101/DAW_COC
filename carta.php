@@ -78,6 +78,7 @@
             </div>
             <div class="col-md-4 pedido">
                 <h2 class="titles text-center color-p05">Tu pedido</h2>
+                <div class="row color-p04 titlepedido"><div class="col-xs-offset-1 col-xs-1"></div><div class="col-xs-4">Plato</div><div class="col-xs-5">Cantidad</div></div>
                 <div class="containerpedido"></div>
                 <h4 class="titles text-center color-p03 containerprize">Total: 0€</h4>
                 <a href="" class="btn btn-md button-p05 titles">Realizar pedido</a>

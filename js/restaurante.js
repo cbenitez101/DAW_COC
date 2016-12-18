@@ -88,7 +88,6 @@ $(document).ready(function(){
 
             $('#map').fadeIn();
             $('#prest').fadeIn();
-
             $('#datosrest').empty();
             $('#datosrest').append('<br/><b>Nombre:</b> '+$('#restnombre option:selected').html()+'<br/>');
             $('#datosrest').append('<b>Telefono:</b> '+restnombre['telefono']+'<br/>');
@@ -106,7 +105,7 @@ $(document).ready(function(){
         var datas = Array();
         $('#errorreserva').fadeOut();
         $('.reserva option:selected').each(function(){
-            if ($(this).val() == '') vacio=true;
+            if ($(this).val() == 'Selecciona un restaurante') vacio=true;
             else datas.push($(this).val());
         });
 
