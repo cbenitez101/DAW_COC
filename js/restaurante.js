@@ -39,7 +39,6 @@ $(document).ready(function(){
         });
     }
 
-
     $(restaurantes).each(function(index, value){
         $.each(value, function(index2, value2){
             if ($('.'+value2.provincia).length == 0) $('#provincia').append('<option class="'+value2.provincia+'">'+value2.provincia.replace(/-/g , " ")+'</option>');
@@ -65,14 +64,6 @@ $(document).ready(function(){
         $('#alertaseleccionrest').hide();
         if ($('#restnombre option:selected').length > 0 && $('#restnombre option:selected').val() !== "Selecciona un restaurante"){
             var restnombre=restaurantes[$('#restnombre option:selected').html()];
-            var GEOjson={ "type": "FeatureCollection",
-                "features": [
-                    { "type": "Feature",
-                        "geometry": {"type": "Point", "coordinates": restnombre["coord"]}, // Formato: [x,y] ó [longitud, latitud]
-                        "properties": {"prop0": "value0"}
-                    }
-                ]
-            };
             var myLatLng = {lat: restnombre["coord"][1], lng: restnombre["coord"][0]};
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 16,
@@ -84,8 +75,11 @@ $(document).ready(function(){
                 scrollwheel:false,
                 center: myLatLng
             });
-            map.data.addGeoJson(GEOjson);
-
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: $('#restnombre option:selected').html()
+            });
             $('#map').fadeIn();
             $('#prest').fadeIn();
             $('#datosrest').empty();
