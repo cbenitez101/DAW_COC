@@ -35,7 +35,6 @@ $(document).ready(function(){
            $(this).parent().parent().parent().remove();
             if($( '.containerpedido' ).children().length == 0) $('.titlepedido').fadeOut();
             getPrize();
-
         });
     });
 });

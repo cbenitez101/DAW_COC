@@ -1,9 +1,11 @@
+<!--<!DOCTYPE html>-->
 <html>
 <head>
     <title>COC</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="node_modules/font-awesome/scss/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css?family=Candal|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Candal%7CRaleway" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/jquery-ui/jquery-ui.css">
 </head>
 <body>
@@ -42,21 +44,21 @@
                 <form>
                     <div class="color-p03" id="alertaseleccionrest"></div><br/>
                     <div class="form-group">
-                        <label for="">Provincia</label>
+                        <label for="provincia">Provincia</label>
                         <select class="form-control" id="provincia">
                             <option>Selecciona una provincia</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="">Localidad</label>
+                        <label for="localidad">Localidad</label>
                         <select class="form-control" id="localidad">
                             <option>Selecciona una localidad</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="">Restaurantes</label>
+                        <label for="restnombre">Restaurantes</label>
                         <select class="form-control" id="restnombre">
                             <option>Selecciona un restaurante</option>
                         </select>
@@ -82,20 +84,20 @@
                 <div id="errorreserva" class="color-p03"><h2 class="color-p03">No pueden haber campos vacios en la reserva</h2></div>
                 <form>
                     <div class="form-group">
-                        <label for="">Comensales</label>
+                        <label for="formcomensales">Comensales</label>
                         <input type="number" class="form-control" id="formcomensales" name="formrcomensales">
                     </div>
 
                     <div class="form-group">
-                        <label for="">Fecha</label>
+                        <label for="formdate">Fecha</label>
                         <input type="text" class="form-control" id="formdate" name="formdate">
                     </div>
 
                     <div class="form-group">
-                        <label for="">Hora</label>
+                        <label for="formhora">Hora</label>
                         <input type="time" class="form-control" size="3" id="formhora" name="formhora"><br/>
                     </div>
-                    <div href="" class="btn button-p04 btn-lg text-uppercase" id="botonreserva">encontrar</div>
+                    <div class="btn button-p04 btn-lg text-uppercase" id="botonreserva">encontrar</div>
                 </form>
             </div>
         </div>
@@ -107,7 +109,7 @@
         <div class="container-fluid">
             <div class="row p-25">
                 <div class="col-md-6 hidden-xs text-left">
-                    <em><strong><p>Síguenos en las redes sociales</p></strong></em>
+                    <p><em><strong>Síguenos en las redes sociales</strong></em></p>
                 </div>
                 <div class="col-md-6 col-xs-12 text-right">
                     <i class="fa fa-facebook fa-lg p-10 changec-p06"></i>

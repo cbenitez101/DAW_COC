@@ -75,10 +75,17 @@ $(document).ready(function(){
                 scrollwheel:false,
                 center: myLatLng
             });
+            // var icon = {
+            //     url: "http://www.freeiconspng.com/uploads/map-navigation-pin-point-restaurant-icon--14.png", // url
+            //     scaledSize: new google.maps.Size(70, 70), // scaled size
+            //     origin: new google.maps.Point(0,0), // origin
+            //     anchor: new google.maps.Point(0, 0) // anchor
+            // };
             var marker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
-                title: $('#restnombre option:selected').html()
+                title: $('#restnombre option:selected').html(),
+                // icon: icon
             });
             $('#map').fadeIn();
             $('#prest').fadeIn();

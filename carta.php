@@ -1,7 +1,9 @@
 <?php include 'functions.php'?>
+<!DOCTYPE html>
 <html>
 <head>
     <title>COC</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="node_modules/font-awesome/scss/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Candal|Raleway" rel="stylesheet">
